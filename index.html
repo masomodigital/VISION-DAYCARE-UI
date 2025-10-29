@@ -71,49 +71,48 @@
     .button:hover {
       opacity: 0.85;
     }
+
     .watch-video-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background-color: #e74c3c;
-  color: white;
-  padding: 12px;
-  margin-top: 10px;
-  text-decoration: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #e74c3c;
+      color: white;
+      padding: 12px;
+      margin-top: 10px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-.watch-video-button:hover {
-  background-color: #c0392b;
-  transform: scale(1.02);
-}
+    .watch-video-button:hover {
+      background-color: #c0392b;
+      transform: scale(1.02);
+    }
 
-.video-icon {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-}
-
+    .video-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>VISION DAYCARE EDUCATION CENTRE</h1>
 
-    <!-- Icon image below heading -->
     <img src="https://i.imgur.com/CFN9t3a.png" alt="System Icon" class="icon">
 
-    <!-- Developer text below icon -->
     <div class="developer-text">
       Developed by Masomo Digital Library. Tel: 0715399449
     </div>
+
     <a href="https://masomodigital.github.io/addnew-studi-visioncare/" class="button green">ADD NEW STUDENT</a>
-    <a href="https://script.google.com/macros/s/AKfycbywGbY-s3YYEp5zp3lZCEefskiZN7bLLdxADI6k6wrp3i8i_eOwmu0ExMllhTXvQg0jXw/exec " class="button red">UPDATE STUDENT RECORD</a>
+    <a href="https://script.google.com/macros/s/AKfycbywGbY-s3YYEp5zp3lZCEefskiZN7bLLdxADI6k6wrp3i8i_eOwmu0ExMllhTXvQg0jXw/exec" class="button red">UPDATE STUDENT RECORD</a>
     <a href="https://script.google.com/macros/s/AKfycbw5nM8Qjzyi-1s6JXOz8s8j2KVLbWmGD8F-v38ueJlXxVhxrC6B_xZeNFzhguhQvJMC/exec" class="button blue">RECEIVE FEE / CHECK BALANCE</a>
     <a href="https://script.google.com/macros/s/AKfycbzyuYVy6PWpFZgdsZPF2qFyBxAcowPAiHVQewAf54ZAxFt9h1-PzrEVtKoOlmLFzBvvOw/exec" class="button black">FEE BALANCE PER CLASS</a>
     <a href="https://script.google.com/macros/s/AKfycbybSqjPz3xawcujdPjuZOvwpkWumqH5Qto5_WwG7op99dysE6cPmX_DiY75yNNrZL8a4Q/exec" class="button red">TOTAL EXPECTED COLLECTIONS</a>
@@ -133,7 +132,8 @@
     <a href="https://script.google.com/macros/s/AKfycbw52_URVRusW-H-g5JCxnvUo15UpyHShZOyZxJycoaCzVqlyMMYZJbHOheTZXL8fxR1Xw/exec" class="button green">CHECK SPECIAL FEES ALLOCATION</a>
     <a href="https://script.google.com/macros/s/AKfycbyKDqsIHAR4rMlcx1cLSKvyPy0on9pAhKtxFqMUvYFadsWrV5AlRJ6uCUq5hK-zosvr/exec" class="button black">SEND SMS FEE REMINDERS</a>
     <a href="https://script.google.com/macros/s/AKfycbznrbl3VVOHCPJH9DOux6OJCtB4yCjfg61eMyVAxkn6sP-VGMdOE3gT31aWSBLxfWKX/exec" class="button red">CHECK BULK SMS BALANCE</a>
-        <p style="text-align: center; font-size: 15px; color: #333; margin-top: 25px;">
+
+    <p style="text-align: center; font-size: 15px; color: #333; margin-top: 25px;">
       Below is video to help you understand how the system works. Click the button to watch the video.
     </p>
 
@@ -144,6 +144,52 @@
       </svg>
       Click here to watch video
     </a>
-</div>
+  </div>
+
+  <!-- Animated overlay blocking page -->
+  <div id="overlay">
+    <div id="overlay-text">
+      Account suspended for failure to complete payment.<br>
+      Contact Admin for details.
+    </div>
+  </div>
+
+  <style>
+    /* Full page overlay */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6); /* semi-transparent */
+      z-index: 9999;
+      pointer-events: all; /* block clicks */
+      overflow: hidden;
+    }
+
+    /* Animated text */
+    #overlay-text {
+      position: absolute;
+      width: 80%;
+      max-width: 600px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      animation: moveUpDown 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes moveUpDown {
+      0% { top: 10%; }
+      50% { top: 50%; }
+      100% { top: 90%; }
+    }
+  </style>
 </body>
 </html>
