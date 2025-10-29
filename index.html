@@ -145,51 +145,5 @@
       Click here to watch video
     </a>
   </div>
-
-  <!-- Animated overlay blocking page -->
-  <div id="overlay">
-    <div id="overlay-text">
-      Account suspended for failure to complete payment.<br>
-      Contact Admin for details.
-    </div>
-  </div>
-
-  <style>
-    /* Full page overlay */
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6); /* semi-transparent */
-      z-index: 9999;
-      pointer-events: all; /* block clicks */
-      overflow: hidden;
-    }
-
-    /* Animated text */
-    #overlay-text {
-      position: absolute;
-      width: 80%;
-      max-width: 600px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255,255,255,0.1);
-      color: white;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-      padding: 20px;
-      border-radius: 10px;
-      animation: moveUpDown 4s ease-in-out infinite alternate;
-    }
-
-    @keyframes moveUpDown {
-      0% { top: 10%; }
-      50% { top: 50%; }
-      100% { top: 90%; }
-    }
-  </style>
 </body>
 </html>
